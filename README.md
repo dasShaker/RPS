@@ -5,4 +5,4 @@ I decided I needed to practice Python concepts I was learning with some practica
 
 I've tried to integrate some console controls, but eventually the idea is to take this game and turn it into something with graphics and sound, possibly with PyGame or the Arcade Library.  This is all really just practice for me.
 
-I'm going to have to go through again and comment the code...
+Constructive criticism is welcome.
