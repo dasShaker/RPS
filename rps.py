@@ -14,8 +14,11 @@ moves = {"rock": "Rock",
          "dynamite": "Dynamite"}
 
 
-# Computer chooses move
 def computer_choice():
+    """
+    Uses a random choice of dictionary keys to set the computer move.  A while loop prevents the
+    computer from choosing the player's special move.
+    """
     pick = random.choice(list(moves.keys()))
     while pick == "dynamite":
         pick = random.choice(list(moves.keys()))
@@ -23,8 +26,13 @@ def computer_choice():
     return c_move
 
 
-# Player chooses move
 def player_choice():
+    """
+    Gives the player a menu to make a choice for this round.  There is a hidden choice activated
+    when the user enters 'boom' or '5'.  Invalid answers loop the function.
+
+    Sets the returned variable to the value of the called dictionary key.
+    """
     while True:
         print()
         print("Make your choice:")
@@ -53,6 +61,11 @@ def player_choice():
 
 
 def throwdown():
+    """
+    The main loop of the game.  The first run of the game sets the scores to zero.  The loop gathers the
+    choices and then evaluates them to determine the winner.  When the winner is determined, points are
+    awarded and the player is asked for another round.
+    """
     # Reads as "x beats y"
     options = {"Rock": ("Scissors", "bashes"),
                "Paper": ("Rock", "covers"),
@@ -116,7 +129,9 @@ def throwdown():
 
 
 def insult():
-    # Dict of insults
+    """
+    Chooses an insult from the easily extendable dictionary of insults and roasts the player.
+    """
     insults = {"1": "Quitter...",
                "2": "Had enough, eh?",
                "3": "Run home to mama!",
@@ -132,12 +147,20 @@ def insult():
 
 
 def finish():
+    """
+    Runs the clear screen function, then insults the player for choosing to leave, then quits.
+    Calling the insult function is meant so that it can be easily disabled here in case you
+    show this to some sensitive people with thin skin.
+    """
     clear()
     insult()
     quit()
 
 
 def clear():
+    """
+    Clears the console when the function is called.
+    """
     if name == "nt":
         _ = system('cls')
     else:
@@ -145,6 +168,9 @@ def clear():
 
 
 def welcome():
+    """
+    A simple welcome screen that plays when the game is first loaded.
+    """
     clear()
     print("Welcome to Rock, Paper, Scissors!\n".center(45))
     sleep(3)
@@ -161,6 +187,6 @@ def welcome():
 
 
 if __name__ == "__main__":
-    system("mode con cols=45 lines=15")
+    system("mode con cols=45 lines=15")  # Set the console size
     welcome()
     quit()
