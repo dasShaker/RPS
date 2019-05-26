@@ -1,7 +1,11 @@
 """
+Author: dasShaker
+Date: 5/25/19
 
+This game is made with the intention of practicing with dictionaries and not having massive if/else statements controlling the logic.
+It may not be the best or most efficient way to write this game, but again, it is a way to practice concepts that are new to this
+programming noob.  Constructive criticism welcome.
 """
-
 import random
 from time import sleep
 from os import system, name
